@@ -26,19 +26,15 @@ html {
 }
 
 body {
-    position: relative;
-    isolation: isolate;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.6;
     color: var(--ink);
     background:
-        radial-gradient(ellipse 90% 34% at 8% 18%, rgba(65, 234, 212, 0.13), transparent 66%),
-        radial-gradient(ellipse 78% 30% at 96% 42%, rgba(255, 77, 125, 0.12), transparent 68%),
-        radial-gradient(ellipse 88% 28% at 10% 72%, rgba(183, 255, 60, 0.10), transparent 70%),
-        radial-gradient(ellipse 72% 24% at 88% 92%, rgba(255, 176, 0, 0.08), transparent 72%),
-        linear-gradient(180deg, #07070a 0%, #101014 38%, #080b0d 69%, #09070b 100%);
+        linear-gradient(135deg, rgba(183, 255, 60, 0.09), transparent 28%),
+        linear-gradient(215deg, rgba(255, 77, 125, 0.10), transparent 34%),
+        linear-gradient(0deg, #07070a, #111014 46%, #08090b);
     overflow-x: hidden;
 }
 
@@ -48,15 +44,15 @@ body.cart-open {
 
 body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     inset: 0;
     z-index: -3;
     pointer-events: none;
-    background-image: url("img/organic-contours.svg");
-    background-repeat: repeat;
-    background-size: 760px 570px;
-    opacity: 0.72;
-    mask-image: linear-gradient(to bottom, transparent 4%, black 14%, black 90%, transparent 100%);
+    background-image:
+        linear-gradient(rgba(246, 241, 220, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(246, 241, 220, 0.025) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(to bottom, black, transparent 88%);
 }
 
 img,
@@ -112,27 +108,9 @@ button {
     z-index: -2;
     width: 100%;
     height: 100%;
-    opacity: 0.20;
+    opacity: 0.32;
     pointer-events: none;
     contain: strict;
-}
-
-main {
-    position: relative;
-    isolation: isolate;
-}
-
-main::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background:
-        linear-gradient(104deg, rgba(65, 234, 212, 0.08), transparent 24%) 0 2% / 100% 20% no-repeat,
-        linear-gradient(254deg, rgba(255, 77, 125, 0.08), transparent 26%) 0 31% / 100% 20% no-repeat,
-        linear-gradient(100deg, rgba(183, 255, 60, 0.07), transparent 22%) 0 61% / 100% 18% no-repeat,
-        linear-gradient(256deg, rgba(142, 92, 255, 0.08), transparent 24%) 0 91% / 100% 9% no-repeat;
 }
 
 .topbar {
@@ -456,22 +434,11 @@ h3 {
 }
 
 .section {
-    position: relative;
     width: min(1180px, calc(100% - 48px));
     margin: 0 auto;
     padding: 92px 0;
     content-visibility: auto;
     contain-intrinsic-size: 900px;
-}
-
-.section-heading::after {
-    content: "";
-    display: block;
-    width: 112px;
-    height: 3px;
-    margin-top: 24px;
-    background: linear-gradient(90deg, var(--acid) 0 34%, transparent 34% 40%, var(--cyan) 40% 68%, transparent 68% 74%, var(--rose) 74% 100%);
-    clip-path: polygon(0 0, 93% 0, 100% 50%, 93% 100%, 0 100%, 7% 50%);
 }
 
 .section-heading {
@@ -1328,13 +1295,9 @@ body.cart-open .drawer-scrim {
 }
 
 @media (max-width: 980px) {
-    .ambient-field {
-        display: none;
-    }
-
+    .ambient-field,
     body::before {
-        background-size: 560px 420px;
-        opacity: 0.52;
+        display: none;
     }
 
     .topbar {

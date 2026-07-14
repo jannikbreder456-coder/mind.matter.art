@@ -1326,7 +1326,7 @@ function initAmbientField() {
     const context = canvas.getContext("2d");
     const palette = ["#b7ff3c", "#41ead4", "#ff4d7d", "#ffb000"];
     const pointer = { x: 0, y: 0, active: false };
-    const frameInterval = 1000 / 24;
+    const frameInterval = 1000 / 30;
     let width = 0;
     let height = 0;
     let nodes = [];
@@ -1344,7 +1344,7 @@ function initAmbientField() {
         canvas.style.height = `${height}px`;
         context.setTransform(ratio, 0, 0, ratio, 0, 0);
 
-        const count = Math.min(32, Math.max(18, Math.floor(width / 46)));
+        const count = Math.min(42, Math.max(24, Math.floor(width / 34)));
         nodes = Array.from({ length: count }, (_, index) => ({
             x: Math.random() * width,
             y: Math.random() * height,

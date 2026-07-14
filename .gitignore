@@ -1,6 +1,7 @@
 # Only lightweight production assets belong in the public repository.
 /img/*
 !/img/logo.svg
+!/img/organic-contours.svg
 !/img/optimized/
 !/img/optimized/**
 
