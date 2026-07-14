@@ -9,7 +9,7 @@ const GERMAN_TIME_ZONES = new Set([
     "Europe/Luxembourg",
     "Europe/Vaduz"
 ]);
-const HERO_IMAGE_INTERVAL = 10000;
+const HERO_IMAGE_INTERVAL = 16000;
 
 const HERO_IMAGES = [
     {
@@ -1219,6 +1219,8 @@ function initRandomHeroImage() {
         (image) => image.src === heroImage.getAttribute("src")
     );
     let heroTimer = null;
+    let preparedHero = null;
+    let preloadPromise = null;
 
     function getNextHeroIndex() {
         if (HERO_IMAGES.length === 1) return 0;
@@ -1230,17 +1232,57 @@ function initRandomHeroImage() {
         return nextIndex;
     }
 
-    function setRandomHeroImage() {
+    function scheduleIdle(callback) {
+        if ("requestIdleCallback" in window) {
+            window.requestIdleCallback(callback, { timeout: 2400 });
+        } else {
+            window.setTimeout(callback, 800);
+        }
+    }
+
+    async function prepareNextHeroImage() {
+        if (preloadPromise || preparedHero) return;
+
         const nextIndex = getNextHeroIndex();
         const nextImage = HERO_IMAGES[nextIndex];
-        activeHeroIndex = nextIndex;
+        const preloader = new Image();
+        preloader.decoding = "async";
+        preloader.src = nextImage.src;
+
+        preloadPromise = typeof preloader.decode === "function"
+            ? preloader.decode()
+            : new Promise((resolve, reject) => {
+                preloader.addEventListener("load", resolve, { once: true });
+                preloader.addEventListener("error", reject, { once: true });
+            });
+
+        try {
+            await preloadPromise;
+            preparedHero = { ...nextImage, index: nextIndex };
+        } catch {
+            preparedHero = null;
+        } finally {
+            preloadPromise = null;
+        }
+    }
+
+    function setRandomHeroImage() {
+        if (!preparedHero) {
+            scheduleIdle(prepareNextHeroImage);
+            return;
+        }
+
+        const nextImage = preparedHero;
+        preparedHero = null;
+        activeHeroIndex = nextImage.index;
 
         heroImage.classList.add("is-fading");
         window.setTimeout(() => {
             heroImage.src = nextImage.src;
             heroImage.alt = nextImage.alt;
             heroImage.classList.remove("is-fading");
-        }, 220);
+            scheduleIdle(prepareNextHeroImage);
+        }, 180);
     }
 
     if (prefersReducedData() || window.matchMedia("(max-width: 760px)").matches) {
@@ -1266,23 +1308,34 @@ function initRandomHeroImage() {
         }
     });
 
+    scheduleIdle(prepareNextHeroImage);
     startHeroRotation();
 }
 
 function initAmbientField() {
     const canvas = document.querySelector("#ambientField");
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!canvas || reduceMotion || prefersReducedData()) return;
+    const compactOrTouch = window.matchMedia("(max-width: 980px), (pointer: coarse)").matches;
+    const lowPowerDevice = (navigator.deviceMemory && navigator.deviceMemory <= 4)
+        || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
+    if (!canvas || reduceMotion || compactOrTouch || lowPowerDevice || prefersReducedData()) {
+        canvas?.remove();
+        return;
+    }
 
     const context = canvas.getContext("2d");
     const palette = ["#b7ff3c", "#41ead4", "#ff4d7d", "#ffb000"];
     const pointer = { x: 0, y: 0, active: false };
+    const frameInterval = 1000 / 30;
     let width = 0;
     let height = 0;
     let nodes = [];
+    let animationFrame = null;
+    let resizeFrame = null;
+    let lastFrameTime = 0;
 
     function resize() {
-        const ratio = Math.min(window.devicePixelRatio || 1, 2);
+        const ratio = Math.min(window.devicePixelRatio || 1, 1.25);
         width = window.innerWidth;
         height = window.innerHeight;
         canvas.width = Math.floor(width * ratio);
@@ -1291,7 +1344,7 @@ function initAmbientField() {
         canvas.style.height = `${height}px`;
         context.setTransform(ratio, 0, 0, ratio, 0, 0);
 
-        const count = Math.min(86, Math.max(42, Math.floor(width / 18)));
+        const count = Math.min(42, Math.max(24, Math.floor(width / 34)));
         nodes = Array.from({ length: count }, (_, index) => ({
             x: Math.random() * width,
             y: Math.random() * height,
@@ -1302,9 +1355,12 @@ function initAmbientField() {
         }));
     }
 
-    function draw() {
+    function draw(time) {
+        animationFrame = window.requestAnimationFrame(draw);
+        if (time - lastFrameTime < frameInterval) return;
+        lastFrameTime = time;
+
         context.clearRect(0, 0, width, height);
-        context.globalCompositeOperation = "lighter";
 
         nodes.forEach((node, index) => {
             node.x += node.vx;
@@ -1318,8 +1374,8 @@ function initAmbientField() {
             if (pointer.active) {
                 const dx = pointer.x - node.x;
                 const dy = pointer.y - node.y;
-                const distance = Math.hypot(dx, dy);
-                if (distance < 150) {
+                const distanceSquared = dx * dx + dy * dy;
+                if (distanceSquared < 12100) {
                     node.x -= dx * 0.002;
                     node.y -= dy * 0.002;
                 }
@@ -1334,10 +1390,10 @@ function initAmbientField() {
                 const next = nodes[nextIndex];
                 const dx = node.x - next.x;
                 const dy = node.y - next.y;
-                const distance = Math.hypot(dx, dy);
-                if (distance < 118) {
+                const distanceSquared = dx * dx + dy * dy;
+                if (distanceSquared < 11025) {
                     context.beginPath();
-                    context.strokeStyle = `rgba(246, 241, 220, ${0.11 - distance / 1200})`;
+                    context.strokeStyle = `rgba(246, 241, 220, ${0.095 - Math.sqrt(distanceSquared) / 1200})`;
                     context.lineWidth = 0.8;
                     context.moveTo(node.x, node.y);
                     context.lineTo(next.x, next.y);
@@ -1346,22 +1402,44 @@ function initAmbientField() {
             }
         });
 
-        context.globalCompositeOperation = "source-over";
-        requestAnimationFrame(draw);
     }
 
-    window.addEventListener("resize", resize);
+    function start() {
+        if (animationFrame || document.hidden) return;
+        lastFrameTime = 0;
+        animationFrame = window.requestAnimationFrame(draw);
+    }
+
+    function stop() {
+        if (!animationFrame) return;
+        window.cancelAnimationFrame(animationFrame);
+        animationFrame = null;
+    }
+
+    function scheduleResize() {
+        if (resizeFrame) return;
+        resizeFrame = window.requestAnimationFrame(() => {
+            resizeFrame = null;
+            resize();
+        });
+    }
+
+    window.addEventListener("resize", scheduleResize, { passive: true });
     window.addEventListener("pointermove", (event) => {
         pointer.x = event.clientX;
         pointer.y = event.clientY;
         pointer.active = true;
-    });
+    }, { passive: true });
     window.addEventListener("pointerleave", () => {
         pointer.active = false;
     });
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) stop();
+        else start();
+    });
 
     resize();
-    draw();
+    start();
 }
 
 function setActiveFilter(button) {
@@ -1373,7 +1451,6 @@ function setActiveFilter(button) {
 
 filterButtons.forEach((button) => {
     button.addEventListener("click", () => setActiveFilter(button));
-    button.addEventListener("pointerup", () => setActiveFilter(button));
 });
 
 languageButtons.forEach((button) => {

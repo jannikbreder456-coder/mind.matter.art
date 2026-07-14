@@ -24,8 +24,8 @@ IMAGES = [
 ]
 
 VARIANTS = [
-    (1800, "", 80),
-    (900, "-thumb", 74),
+    ((1600, 2000), "", 76),
+    ((720, 960), "-thumb", 70),
 ]
 
 
@@ -43,14 +43,9 @@ def optimize_images() -> None:
                     "RGBA" if "transparency" in image.info else "RGB"
                 )
 
-            for max_width, suffix, quality in VARIANTS:
+            for max_size, suffix, quality in VARIANTS:
                 variant = image.copy()
-                if variant.width > max_width:
-                    height = round(variant.height * max_width / variant.width)
-                    variant = variant.resize(
-                        (max_width, height),
-                        Image.Resampling.LANCZOS,
-                    )
+                variant.thumbnail(max_size, Image.Resampling.LANCZOS)
 
                 destination = output_directory / f"{output_name}{suffix}.webp"
                 variant.save(
