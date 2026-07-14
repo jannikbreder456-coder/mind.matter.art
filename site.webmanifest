@@ -1,0 +1,18 @@
+{
+  "name": "Organic Dreamscapes | Mind Matter Art",
+  "short_name": "Mind Matter Art",
+  "description": "Original art, fine-art prints, and commissioned visual work by Jannik Breder.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0a0a0d",
+  "theme_color": "#a8ff22",
+  "icons": [
+    {
+      "src": "img/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

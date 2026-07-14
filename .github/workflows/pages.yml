@@ -1,0 +1,55 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Validate JavaScript
+        run: |
+          node --check script.js
+          node --check legal.js
+
+      - name: Build production artifact
+        shell: bash
+        run: |
+          mkdir -p _site/img
+          cp index.html 404.html privacy.html stylesheet.css script.js legal.js LICENSE.txt robots.txt site.webmanifest .nojekyll _site/
+          cp img/logo.svg _site/img/
+          cp -R img/optimized _site/img/
+          if [ -f CNAME ]; then cp CNAME _site/; fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

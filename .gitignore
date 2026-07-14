@@ -1,0 +1,14 @@
+# Only lightweight production assets belong in the public repository.
+/img/*
+!/img/logo.svg
+!/img/optimized/
+!/img/optimized/**
+
+# Local source files and former drafts.
+Contact.html
+Portfolio.html
+stylessheet
+*.psd
+__pycache__/
+Thumbs.db
+.DS_Store

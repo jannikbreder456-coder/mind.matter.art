@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Organic Dreamscapes by Jannik Breder: original art, fine-art prints, commissioned visuals, tattoo motifs, and spatial work.">
+    <meta name="author" content="Jannik Breder">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="theme-color" content="#a8ff22">
+    <meta name="color-scheme" content="dark">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mind Matter Art">
+    <meta property="og:title" content="Organic Dreamscapes | Mind Matter Art">
+    <meta property="og:description" content="Original art, fine-art prints, commissioned visuals, tattoo motifs, and spatial work by Jannik Breder.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="de_DE">
+    <meta property="og:image" content="img/optimized/event-bar-night.webp">
+    <meta property="og:image:alt" content="Organic Dreamscapes by Jannik Breder">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Organic Dreamscapes | Mind Matter Art">
+    <meta name="twitter:description" content="Original art, prints, and commissioned visual work by Jannik Breder.">
+    <meta name="twitter:image" content="img/optimized/event-bar-night.webp">
+    <title>Organic Dreamscapes | Mind Matter Art</title>
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="alternate" hreflang="en" href="?lang=en">
+    <link rel="alternate" hreflang="de" href="?lang=de">
+    <link rel="alternate" hreflang="x-default" href="./">
+    <link rel="preload" href="img/optimized/meditate.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="stylesheet" href="stylesheet.css?v=20260714-8">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Jannik Breder",
+            "alternateName": "Mind Matter Art",
+            "jobTitle": "Visual Artist",
+            "description": "Artist working across organic psychedelic drawing, fine-art prints, commissioned visuals, tattoo motifs, and spatial design.",
+            "sameAs": ["https://www.instagram.com/mind.matter.art"]
+        }
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#shop" data-i18n="skip.shop">Skip to shop</a>
+    <canvas class="ambient-field" id="ambientField" aria-hidden="true"></canvas>
+
+    <header class="site-header" id="top">
+        <nav class="topbar" aria-label="Main navigation">
+            <a class="brand-lockup" href="#top" aria-label="Mind Matter Art home">
+                <img src="img/logo.svg" alt="" class="brand-mark">
+                <span>Mind Matter Art</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="#shop" data-i18n="nav.shop">Shop</a>
+                <a href="#commissions" data-i18n="nav.commissions">Commissions</a>
+                <a href="#lookbook" data-i18n="nav.gallery">Gallery</a>
+                <a href="#artist" data-i18n="nav.artist">Artist</a>
+                <a href="#contact" data-i18n="nav.contact">Contact</a>
+                <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
+            </div>
+
+            <div class="top-actions">
+                <div class="language-toggle" role="group" aria-label="Language">
+                    <a class="lang-btn is-active" href="?lang=en" data-lang="en" aria-pressed="true">EN</a>
+                    <a class="lang-btn" href="?lang=de" data-lang="de" aria-pressed="false">DE</a>
+                </div>
+
+                <button class="icon-button cart-toggle" type="button" aria-label="Open cart" data-i18n-aria="cart.open" aria-controls="cartDrawer">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M6.2 7h13.1l-1.4 8.2a2 2 0 0 1-2 1.7H9a2 2 0 0 1-2-1.6L5.4 4.8H3"></path>
+                        <circle cx="9.2" cy="20" r="1.2"></circle>
+                        <circle cx="16.4" cy="20" r="1.2"></circle>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </nav>
+
+        <section class="hero" aria-labelledby="heroTitle">
+            <img class="hero-art" src="img/optimized/meditate.webp" alt="Psychedelic organic line drawing of a meditative figure" decoding="async" fetchpriority="high">
+            <div class="hero-shade" aria-hidden="true"></div>
+
+            <div class="hero-content reveal">
+                <p class="hero-statement" data-i18n="hero.statement">Visual explorations of consciousness, perception and organic complexity.</p>
+                <h1 id="heroTitle">Organic Dreamscapes</h1>
+                <p class="hero-byline">Mind Matter Art by Jannik Breder</p>
+                <p class="hero-copy" data-i18n="hero.copy">
+                    Original works, fine-art prints, and commissioned visuals by Jannik Breder. Drawn by hand and developed for paper, spaces, events, and identities.
+                </p>
+                <div class="hero-actions" aria-label="Quick actions">
+                    <a class="button button-primary" href="#shop" data-i18n="hero.shop">Shop artworks</a>
+                    <a class="button button-ghost" href="#commissions" data-i18n="hero.commission">Commission work</a>
+                </div>
+            </div>
+
+            <div class="hero-strip" aria-label="Shop highlights">
+                <span data-i18n="hero.originals">Original artworks</span>
+                <span data-i18n="hero.prints">Art prints</span>
+                <span data-i18n="hero.commissions">Commission work</span>
+                <span data-i18n="hero.inquiry">Direct inquiry</span>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="section shop-section" id="shop" aria-labelledby="shopTitle">
+            <div class="section-heading reveal">
+                <p class="eyebrow" data-i18n="shop.eyebrow">Current Selection</p>
+                <h2 id="shopTitle" data-i18n="shop.title">Collect a work or start a project</h2>
+                <p data-i18n="shop.copy">
+                    Explore originals, prints, and selected commission formats. Add available works to your inquiry or contact me directly for custom projects.
+                </p>
+            </div>
+
+            <div class="shop-toolbar reveal" aria-label="Shop filters">
+                <div class="segmented-control" role="group" aria-label="Filter by category">
+                    <button class="filter-btn is-active" type="button" data-filter="all" data-i18n="filters.all">All</button>
+                    <button class="filter-btn" type="button" data-filter="original" data-i18n="filters.originals">Originals</button>
+                    <button class="filter-btn" type="button" data-filter="print" data-i18n="filters.prints">Prints</button>
+                    <button class="filter-btn" type="button" data-filter="commission" data-i18n="filters.commissions">Commissions</button>
+                </div>
+
+                <label class="sort-control" for="sortSelect">
+                    <span data-i18n="sort.label">Sort by</span>
+                    <select id="sortSelect">
+                        <option value="featured" data-i18n="sort.featured">Featured</option>
+                        <option value="price-low" data-i18n="sort.low">Price low to high</option>
+                        <option value="price-high" data-i18n="sort.high">Price high to low</option>
+                        <option value="new" data-i18n="sort.new">Newest first</option>
+                    </select>
+                </label>
+            </div>
+
+            <!-- Shop-Karten entstehen in script.js im products-Array.
+                 Dort kannst du neue Bilder, Titel und Beschreibungen direkt als neue Einträge anlegen. -->
+            <div class="shop-layout">
+                <div class="product-grid" id="productGrid" aria-live="polite"></div>
+
+                <aside class="collector-panel reveal" aria-labelledby="collectorTitle">
+                    <p class="eyebrow" data-i18n="process.eyebrow">How It Works</p>
+                    <h3 id="collectorTitle" data-i18n="process.title">Simple inquiry process</h3>
+                    <ol class="collector-steps">
+                        <li data-i18n="process.one">Open a piece and check the details.</li>
+                        <li data-i18n="process.two">Add originals, prints, or services to the cart.</li>
+                        <li data-i18n="process.three">Send the inquiry and we clarify the rest by email.</li>
+                    </ol>
+                    <a class="button button-primary" href="#contact" data-i18n="process.contact">Contact directly</a>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section services-section" id="commissions" aria-labelledby="commissionsTitle">
+            <div class="section-heading reveal">
+                <p class="eyebrow" data-i18n="commissions.eyebrow">Commissions</p>
+                <h2 id="commissionsTitle" data-i18n="commissions.title">A visual world made for your project</h2>
+                <p data-i18n="commissions.copy">
+                    Commission work starts with a focused briefing. We define the idea, format, context, timing, revisions, and usage before production begins.
+                </p>
+            </div>
+
+            <div class="service-grid">
+                <article class="service-tile reveal">
+                    <span class="service-number" aria-hidden="true">01</span>
+                    <h3 data-i18n="services.customTitle">Custom Artwork</h3>
+                    <p data-i18n="services.custom">A personal artwork as an original drawing or digitally finished piece.</p>
+                    <button class="button button-ghost add-service" type="button" data-product="commission" data-i18n="buttons.request">Request</button>
+                </article>
+                <article class="service-tile reveal">
+                    <span class="service-number" aria-hidden="true">02</span>
+                    <h3 data-i18n="services.eventTitle">Event Visual</h3>
+                    <p data-i18n="services.event">Poster, flyer, bar lettering, or social media visual for events and culture projects.</p>
+                    <button class="button button-ghost add-service" type="button" data-product="event-visual" data-i18n="buttons.request">Request</button>
+                </article>
+                <article class="service-tile reveal">
+                    <span class="service-number" aria-hidden="true">03</span>
+                    <h3 data-i18n="services.tattooTitle">Tattoo Motif</h3>
+                    <p data-i18n="services.tattoo">A custom tattoo template developed together from your idea, body placement, and visual direction.</p>
+                    <button class="button button-ghost add-service" type="button" data-product="tattoo-motif" data-i18n="buttons.request">Request</button>
+                </article>
+                <article class="service-tile reveal">
+                    <span class="service-number" aria-hidden="true">04</span>
+                    <h3 data-i18n="services.logoTitle">Logo Design Package</h3>
+                    <p data-i18n="services.logo">Logo, color direction, and basic usage rules for a project, label, collective, or small business.</p>
+                    <button class="button button-ghost add-service" type="button" data-product="logo-design" data-i18n="buttons.request">Request</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="section lookbook-section" id="lookbook" aria-labelledby="lookbookTitle">
+            <div class="section-heading reveal">
+                <p class="eyebrow" data-i18n="gallery.eyebrow">Gallery View</p>
+                <h2 id="lookbookTitle" data-i18n="gallery.title">Selected works</h2>
+                <p data-i18n="gallery.copy">
+                    Selected original works, print variants, tattoo drawings, objects, and spatial projects.
+                </p>
+            </div>
+
+            <!-- Hier neue Galerie-Bilder einfügen: den figure-Block kopieren,
+                 src, alt-Text und figcaption anpassen. -->
+            <div class="lookbook-grid">
+                <figure class="lookbook-item lookbook-large reveal">
+                    <img src="img/optimized/missed-opportunities-original-thumb.webp" alt="Missed Opportunities original artwork in decorative example frame" loading="lazy" decoding="async">
+                    <figcaption data-i18n="gallery.missedOriginal">Missed Opportunities - original shown in an example frame; frame not included</figcaption>
+                </figure>
+                <figure class="lookbook-item reveal">
+                    <img src="img/optimized/organic-passage-original-thumb.webp" alt="Organic Passage watercolor and ink artwork" loading="lazy" decoding="async">
+                    <figcaption data-i18n="gallery.organic">Organic Passage - print available by request</figcaption>
+                </figure>
+                <figure class="lookbook-item reveal">
+                    <img src="img/optimized/missed-opportunities-print-thumb.webp" alt="Missed Opportunities print artwork" loading="lazy" decoding="async">
+                    <figcaption data-i18n="gallery.missedPrint">Missed Opportunities - print artwork</figcaption>
+                </figure>
+                <figure class="lookbook-item reveal">
+                    <img src="img/optimized/abstract-faces-thumb.webp" alt="Abstract Faces watercolor and ink on paper" loading="lazy" decoding="async">
+                    <figcaption data-i18n="gallery.abstract">Abstract Faces - watercolor and ink on paper</figcaption>
+                </figure>
+                <figure class="lookbook-item reveal">
+                    <img src="img/optimized/faces-v3-thumb.webp" alt="Faces V3 modified print artwork" loading="lazy" decoding="async">
+                    <figcaption data-i18n="gallery.facesV3">Faces V3 - modified print variant</figcaption>
+                </figure>
+                <figure class="lookbook-item reveal">
+                    <img src="img/optimized/event-bar-night-thumb.webp" alt="Hilltop Bar event surface design at night" loading="lazy" decoding="async">
+                    <figcaption data-i18n="gallery.eventBar">Hilltop Bar - event surface design in use</figcaption>
+                </figure>
+                <figure class="lookbook-item reveal">
+                    <img src="img/optimized/festival-object-thumb.webp" alt="Recycled festival mushroom built from surrounding materials" loading="lazy" decoding="async">
+                    <figcaption data-i18n="gallery.mushroom">Recycled Festival Object - mushroom project shown as an example</figcaption>
+                </figure>
+                <figure class="lookbook-item reveal">
+                    <img src="img/optimized/tattoo-sunflower-thumb.webp" alt="Black line sunflower tattoo template" loading="lazy" decoding="async">
+                    <figcaption data-i18n="gallery.tattooFlower">Floral Tattoo Motif - sunflower linework</figcaption>
+                </figure>
+                <figure class="lookbook-item reveal">
+                    <img src="img/optimized/tattoo-flower-thumb.webp" alt="Black line tattoo motif template" loading="lazy" decoding="async">
+                    <figcaption data-i18n="gallery.tattoo">Tattoo Motif - custom template example</figcaption>
+                </figure>
+                <figure class="lookbook-item reveal">
+                    <img src="img/optimized/selflove2-thumb.webp" alt="Self Love II psychedelic organic drawing" loading="lazy" decoding="async">
+                    <figcaption data-i18n="gallery.selfLoveTwo">Self Love II - print detail</figcaption>
+                </figure>
+                <figure class="lookbook-item reveal">
+                    <img src="img/optimized/selflove-thumb.webp" alt="Self Love organic psychedelic drawing" loading="lazy" decoding="async">
+                    <figcaption data-i18n="gallery.selfLove">Self Love - print study</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section artist-section" id="artist" aria-labelledby="artistTitle">
+            <div class="artist-copy reveal">
+                <p class="eyebrow" data-i18n="artist.eyebrow">Artist Statement</p>
+                <h2 id="artistTitle">Jannik Breder</h2>
+                <p data-i18n="artist.copyOne">
+                    I build cyber-organic visuals for people, events, spaces, and projects that need a distinct visual world. My work moves between drawing, print, installation, surface design, and identity marks.
+                </p>
+                <p data-i18n="artist.copyTwo">
+                    Organic Dreamscapes is the common thread: forms that feel grown, transformed, and slightly unfamiliar. Each project is developed for its actual context, from paper and skin to rooms, bars, stages, and visual identities.
+                </p>
+                <div class="artist-stats" aria-label="Focus areas">
+                    <span>Illustration</span>
+                    <span>Logo</span>
+                    <span>Poster</span>
+                    <span data-i18n="artist.identity">Visual Identity</span>
+                </div>
+            </div>
+
+            <div class="artist-portrait reveal">
+                <img src="img/optimized/surface-design-bar-thumb.webp" alt="Jannik Breder painting an event bar installation" loading="lazy" decoding="async">
+                <p class="artist-image-caption" data-i18n="artist.imageCaption">On-site work at Hilltop Bar, Waldfrieden</p>
+            </div>
+        </section>
+
+        <section class="section practice-section" id="background" aria-labelledby="backgroundTitle">
+            <div class="section-heading reveal">
+                <p class="eyebrow" data-i18n="practice.eyebrow">Practice and experience</p>
+                <h2 id="backgroundTitle" data-i18n="practice.title">Built across paper, screens, and real spaces</h2>
+                <p data-i18n="practice.copy">A hybrid practice combining analog drawing, digital production, and hands-on work for events and physical environments.</p>
+            </div>
+
+            <div class="practice-layout">
+                <figure class="project-proof reveal">
+                    <img src="img/optimized/event-bar-night-thumb.webp" alt="Hilltop Bar at Waldfrieden illuminated at night" loading="lazy" decoding="async">
+                    <figcaption>
+                        <span data-i18n="practice.projectLabel">Selected project</span>
+                        <strong>Hilltop Bar / Waldfrieden</strong>
+                        <small data-i18n="practice.projectDate">Surface design and lettering, 2024</small>
+                    </figcaption>
+                </figure>
+
+                <div class="practice-list reveal">
+                    <article>
+                        <span class="practice-kicker" data-i18n="practice.analogLabel">Analog + digital</span>
+                        <h3 data-i18n="practice.analogTitle">From original line to finished artwork</h3>
+                        <p data-i18n="practice.analogCopy">Drawing, watercolor, ink, image editing, vector work, layout, and production-ready files.</p>
+                    </article>
+                    <article>
+                        <span class="practice-kicker" data-i18n="practice.spaceLabel">Event + space</span>
+                        <h3 data-i18n="practice.spaceTitle">Visuals that work beyond the screen</h3>
+                        <p data-i18n="practice.spaceCopy">Surface painting, lettering, recycled objects, signage, and visual direction for cultural spaces.</p>
+                    </article>
+                    <article>
+                        <span class="practice-kicker" data-i18n="practice.processLabel">Clear process</span>
+                        <h3 data-i18n="practice.processTitle">Briefing, concept, production</h3>
+                        <p data-i18n="practice.processCopy">Scope, format, timing, revisions, and usage are agreed before work starts.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-section" id="contact" aria-labelledby="contactTitle">
+            <div class="contact-copy reveal">
+                <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+                <h2 id="contactTitle" data-i18n="contact.title">Bring your idea into the next visual world</h2>
+                <p data-i18n="contact.copy">
+                    Tell me what you are planning, where the work will live, and when you need it. For available artworks, you can also send a prepared inquiry from the cart.
+                </p>
+                <div class="contact-meta" aria-label="Project information">
+                    <span data-i18n="contact.scope">Originals, prints, and commissioned work</span>
+                    <span data-i18n="contact.location">Based in Bielefeld, available for remote and on-site projects</span>
+                </div>
+                <div class="contact-actions">
+                    <a class="button button-primary" href="mailto:jannikbreder456@gmail.com" data-i18n="contact.email">Email</a>
+                    <a class="button button-ghost" href="https://www.instagram.com/mind.matter.art" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+            </div>
+
+            <form class="contact-form reveal" id="contactForm">
+                <label>
+                    <span data-i18n="form.name">Name</span>
+                    <input type="text" name="name" autocomplete="name" required>
+                </label>
+                <label>
+                    <span data-i18n="form.email">Email</span>
+                    <input type="email" name="email" autocomplete="email" required>
+                </label>
+                <label>
+                    <span data-i18n="form.message">Message</span>
+                    <textarea name="message" rows="5" required></textarea>
+                </label>
+                <button class="button button-primary" type="submit" data-i18n="form.submit">Prepare email</button>
+            </form>
+        </section>
+
+        <section class="section reviews-section" id="reviews" aria-labelledby="reviewsTitle">
+            <div class="section-heading reveal">
+                <p class="eyebrow" data-i18n="reviews.eyebrow">Buyer Feedback</p>
+                <h2 id="reviewsTitle" data-i18n="reviews.title">Share your buying experience</h2>
+                <p data-i18n="reviews.copy">
+                    Tell me how the inquiry, communication, payment, packaging, or delivery felt. Reviews are sent by email and published only after approval.
+                </p>
+            </div>
+
+            <div class="reviews-layout">
+                <article class="review-empty reveal">
+                    <p class="eyebrow" data-i18n="reviews.boardEyebrow">Published reviews</p>
+                    <h3 data-i18n="reviews.emptyTitle">No public reviews yet</h3>
+                    <p data-i18n="reviews.emptyCopy">The first approved collector reviews will appear here.</p>
+                </article>
+
+                <form class="review-form reveal" id="reviewForm">
+                    <div class="review-form-grid">
+                        <label>
+                            <span data-i18n="reviews.name">Name</span>
+                            <input type="text" name="reviewer" autocomplete="name" required>
+                        </label>
+                        <label>
+                            <span data-i18n="reviews.rating">Rating</span>
+                            <select name="rating" required>
+                                <option value="5">5 / 5</option>
+                                <option value="4">4 / 5</option>
+                                <option value="3">3 / 5</option>
+                                <option value="2">2 / 5</option>
+                                <option value="1">1 / 5</option>
+                            </select>
+                        </label>
+                    </div>
+                    <label>
+                        <span data-i18n="reviews.purchase">Artwork or service</span>
+                        <input type="text" name="purchase" required>
+                    </label>
+                    <label>
+                        <span data-i18n="reviews.message">Your experience</span>
+                        <textarea name="review" rows="5" required></textarea>
+                    </label>
+                    <button class="button button-primary" type="submit" data-i18n="reviews.submit">Prepare review email</button>
+                    <p class="form-note" data-i18n="reviews.note">Your text opens as an email draft, so nothing is published automatically.</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Cart" aria-hidden="true">
+        <div class="drawer-header">
+            <div>
+                <p class="eyebrow" data-i18n="cart.eyebrow">Cart</p>
+                <h2 data-i18n="cart.title">Your selection</h2>
+            </div>
+            <button class="icon-button close-cart" type="button" aria-label="Close cart" data-i18n-aria="cart.close">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 6l12 12M18 6L6 18"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="subtotal">
+                <span data-i18n="cart.subtotal">Subtotal</span>
+                <strong id="cartSubtotal">0 EUR</strong>
+            </div>
+            <button class="button button-primary checkout-btn" type="button" id="checkoutBtn" data-i18n="cart.send">Send inquiry</button>
+            <button class="button button-ghost clear-cart" type="button" id="clearCartBtn" data-i18n="cart.clear">Clear cart</button>
+        </div>
+    </aside>
+    <button class="drawer-scrim" type="button" aria-label="Close cart" data-i18n-aria="cart.close"></button>
+
+    <dialog class="product-dialog" id="productDialog">
+        <button class="icon-button dialog-close" type="button" aria-label="Close details" data-i18n-aria="dialog.close">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18"></path>
+            </svg>
+        </button>
+        <div class="dialog-grid" id="dialogContent"></div>
+    </dialog>
+
+    <footer class="site-footer">
+        <div>
+            <img src="img/logo.svg" alt="" class="footer-mark">
+            <p>Mind Matter Art - Organic Dreamscapes by Jannik Breder</p>
+            <p><a href="https://www.instagram.com/mind.matter.art" target="_blank" rel="noopener noreferrer">@mind.matter.art</a></p>
+            <p class="copyright-notice" data-i18n="footer.copyright">© 2026 Jannik Breder. All rights reserved.</p>
+            <p class="rights-notice" data-i18n="footer.rights">Artwork, text, images, and website code may not be used, copied, or modified without written permission.</p>
+            <p class="footer-links">
+                <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+                <a href="LICENSE.txt" data-i18n="footer.license">License</a>
+            </p>
+        </div>
+        <div>
+            <p><strong data-i18n="footer.legal">Legal notice</strong></p>
+            <p>Jannik Breder, Friedrich-Schultz-Straße 80, 33609 Bielefeld, <span data-i18n="footer.country">Germany</span></p>
+            <p><a href="mailto:jannikbreder456@gmail.com">jannikbreder456@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=20260714-8" defer></script>
+</body>
+</html>

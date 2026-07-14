@@ -1,0 +1,30 @@
+MIND MATTER ART / ORGANIC DREAMSCAPES
+Copyright (c) 2026 Jannik Breder. All rights reserved.
+
+Deutsch
+-------
+Alle Kunstwerke, Illustrationen, Texte, Bilder, Grafiken, Markenzeichen sowie
+der individuelle HTML-, CSS- und JavaScript-Code dieses Projekts sind
+urheberrechtlich geschützt.
+
+Ohne vorherige schriftliche Genehmigung von Jannik Breder dürfen die Inhalte
+und Dateien weder vollständig noch teilweise verwendet, vervielfältigt,
+veröffentlicht, verbreitet, verkauft, verändert oder für eigene Projekte
+übernommen werden.
+
+Materialien, an denen Dritte Rechte besitzen, sind von dieser Rechteerklärung
+ausgenommen. Für solche Materialien werden durch diese Datei keine zusätzlichen
+Nutzungsrechte eingeräumt.
+
+English
+-------
+All artworks, illustrations, texts, images, graphics, identity marks, and the
+individual HTML, CSS, and JavaScript code in this project are protected by
+copyright.
+
+The content and files may not be used, copied, published, distributed, sold,
+modified, or incorporated into other projects, in whole or in part, without
+prior written permission from Jannik Breder.
+
+Materials owned by third parties are excluded from this rights statement. This
+file does not grant any additional rights to third-party material.
