@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://jannikbreder456-coder.github.io/mind.matter.art/sitemap.xml

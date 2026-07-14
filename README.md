@@ -2,6 +2,8 @@
 
 Portfolio and inquiry website for **Mind Matter Art by Jannik Breder**.
 
+Live website: https://jannikbreder456-coder.github.io/mind.matter.art/
+
 ## Publish
 
 The repository includes a GitHub Pages workflow. Every push to `main` validates the JavaScript, builds a lightweight production artifact, and publishes the website.
