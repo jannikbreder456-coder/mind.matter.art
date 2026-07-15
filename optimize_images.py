@@ -28,6 +28,19 @@ VARIANTS = [
     ((720, 960), "-thumb", 70),
 ]
 
+# Dark, textured paintings lose visible canvas detail under the general
+# compression profile. Keep these two presentation variants deliberately crisp.
+VARIANT_OVERRIDES = {
+    "missed-opportunities-print": [
+        ((2200, 3200), "", 90),
+        ((960, 1400), "-thumb", 86),
+    ],
+    "missed-opportunities-original": [
+        ((2200, 3200), "", 90),
+        ((960, 1400), "-thumb", 86),
+    ],
+}
+
 
 def optimize_images() -> None:
     image_directory = Path(__file__).parent / "img"
@@ -43,7 +56,8 @@ def optimize_images() -> None:
                     "RGBA" if "transparency" in image.info else "RGB"
                 )
 
-            for max_size, suffix, quality in VARIANTS:
+            variants = VARIANT_OVERRIDES.get(output_name, VARIANTS)
+            for max_size, suffix, quality in variants:
                 variant = image.copy()
                 variant.thumbnail(max_size, Image.Resampling.LANCZOS)
 

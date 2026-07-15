@@ -21,7 +21,7 @@ const HERO_IMAGES = [
         alt: "Organic Passage watercolor and ink artwork"
     },
     {
-        src: "img/optimized/missed-opportunities-print.webp",
+        src: "img/optimized/missed-opportunities-print.webp?v=20260715-1",
         alt: "Missed Opportunities figurative print artwork"
     },
     {
@@ -379,8 +379,8 @@ const products = [
     {
         id: "missed-opportunities-print",
         category: "print",
-        image: "img/optimized/missed-opportunities-print.webp",
-        thumbnail: "img/optimized/missed-opportunities-print-thumb.webp",
+        image: "img/optimized/missed-opportunities-print.webp?v=20260715-1",
+        thumbnail: "img/optimized/missed-opportunities-print-thumb.webp?v=20260715-1",
         price: null,
         year: 2026,
         featured: 3,
@@ -407,8 +407,8 @@ const products = [
     {
         id: "missed-opportunities-original",
         category: "original",
-        image: "img/optimized/missed-opportunities-original.webp",
-        thumbnail: "img/optimized/missed-opportunities-original-thumb.webp",
+        image: "img/optimized/missed-opportunities-original.webp?v=20260715-1",
+        thumbnail: "img/optimized/missed-opportunities-original-thumb.webp?v=20260715-1",
         price: null,
         year: 2026,
         featured: 1,
