@@ -464,16 +464,6 @@ h3 {
     contain-intrinsic-size: 900px;
 }
 
-.section-heading::after {
-    content: "";
-    display: block;
-    width: 112px;
-    height: 3px;
-    margin-top: 24px;
-    background: linear-gradient(90deg, var(--acid) 0 34%, transparent 34% 40%, var(--cyan) 40% 68%, transparent 68% 74%, var(--rose) 74% 100%);
-    clip-path: polygon(0 0, 93% 0, 100% 50%, 93% 100%, 0 100%, 7% 50%);
-}
-
 .section-heading {
     max-width: 760px;
     margin-bottom: 34px;
