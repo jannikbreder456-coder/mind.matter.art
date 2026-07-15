@@ -926,7 +926,7 @@ function renderProducts() {
         const contactOnly = isContactOnly(baseProduct);
         const productPrice = getPriceLabel(baseProduct);
         return `
-            <article class="product-card" style="--accent: ${productAccent(product.category)}">
+            <article class="product-card">
                 <div class="product-media">
                     ${buildProductImage(baseProduct, product.title)}
                     <span class="product-badge">${product.label}</span>
@@ -949,12 +949,6 @@ function renderProducts() {
             </article>
         `;
     }).join("");
-}
-
-function productAccent(category) {
-    if (category === "original") return "#ff4d7d";
-    if (category === "print") return "#41ead4";
-    return "#ffb000";
 }
 
 function addToCart(id) {

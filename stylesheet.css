@@ -122,19 +122,6 @@ main {
     isolation: isolate;
 }
 
-main::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background:
-        linear-gradient(104deg, rgba(65, 234, 212, 0.08), transparent 24%) 0 2% / 100% 20% no-repeat,
-        linear-gradient(254deg, rgba(255, 77, 125, 0.08), transparent 26%) 0 31% / 100% 20% no-repeat,
-        linear-gradient(100deg, rgba(183, 255, 60, 0.07), transparent 22%) 0 61% / 100% 18% no-repeat,
-        linear-gradient(256deg, rgba(142, 92, 255, 0.08), transparent 24%) 0 91% / 100% 9% no-repeat;
-}
-
 .topbar {
     position: sticky;
     top: 0;
@@ -557,7 +544,6 @@ h3 {
 
 .product-card {
     overflow: hidden;
-    border-top: 2px solid var(--accent, var(--line));
     contain: layout paint style;
 }
 
