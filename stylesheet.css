@@ -678,6 +678,25 @@ h3 {
     font-weight: 900;
 }
 
+.lookbook-item.lookbook-artwork {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    align-items: center;
+    min-height: 0;
+}
+
+.lookbook-artwork img {
+    display: block;
+    height: auto;
+    min-height: 0;
+    filter: none;
+}
+
+.lookbook-artwork figcaption {
+    position: static;
+    background: none;
+}
+
 .artist-section {
     display: grid;
     grid-template-columns: 1fr 420px;
