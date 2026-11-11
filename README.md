@@ -8,7 +8,7 @@ Live website: https://jannikbreder456-coder.github.io/mind.matter.art/
 
 The repository includes a GitHub Pages workflow. Every push to `main` validates the JavaScript, builds a lightweight production artifact, and publishes the website.
 
-Only `img/logo.svg` and the optimized WebP files in `img/optimized` are published. The high-resolution source artwork remains local and is excluded by `.gitignore`.
+The published site uses the logo files, `img/organic-contours.svg`, and the optimized WebP files in `img/optimized`. The high-resolution source artwork remains local and is excluded by `.gitignore`.
 
 ## Add or update artwork
 

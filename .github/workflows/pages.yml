@@ -31,7 +31,7 @@ jobs:
         run: |
           mkdir -p _site/img
           cp index.html 404.html privacy.html stylesheet.css script.js legal.js LICENSE.txt robots.txt sitemap.xml site.webmanifest .nojekyll _site/
-          cp img/logo.svg _site/img/
+          cp img/logo.svg img/mind-matter-logo-white.png img/organic-contours.svg _site/img/
           cp -R img/optimized _site/img/
           if [ -f CNAME ]; then cp CNAME _site/; fi
 

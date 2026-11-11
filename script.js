@@ -9,58 +9,24 @@ const GERMAN_TIME_ZONES = new Set([
     "Europe/Luxembourg",
     "Europe/Vaduz"
 ]);
-const HERO_IMAGE_INTERVAL = 16000;
-
-const HERO_IMAGES = [
-    {
-        src: "img/optimized/meditate.webp",
-        alt: "Psychedelic organic line drawing of a meditative figure"
-    },
-    {
-        src: "img/optimized/organic-passage-original.webp",
-        alt: "Organic Passage watercolor and ink artwork"
-    },
-    {
-        src: "img/optimized/missed-opportunities-print.webp?v=20260715-1",
-        alt: "Missed Opportunities figurative print artwork"
-    },
-    {
-        src: "img/optimized/faces-v3.webp",
-        alt: "Modified Abstract Faces print artwork"
-    },
-    {
-        src: "img/optimized/event-bar-night.webp",
-        alt: "Hilltop Bar event surface design at night"
-    },
-    {
-        src: "img/optimized/festival-object.webp",
-        alt: "Recycled festival mushroom built from surrounding materials"
-    },
-    {
-        src: "img/optimized/selflove2.webp",
-        alt: "Self Love II psychedelic organic drawing"
-    }
-];
-
 const translations = {
     en: {
-        "meta.title": "Organic Dreamscapes | Mind Matter Art",
-        "meta.description": "Organic Dreamscapes by Jannik Breder: original art, fine-art prints, commissioned visuals, tattoo motifs, and spatial work.",
-        "skip.shop": "Skip to shop",
+        "meta.title": "Jannik Breder · Organic Dreamscapes | Mind Matter Art",
+        "meta.description": "Explore Jannik Breder’s Organic Dreamscapes portfolio, from hand-drawn works and fine-art prints to lettering and spatial projects.",
+        "skip.content": "Skip to content",
         "nav.shop": "Shop",
         "nav.commissions": "Commissions",
         "nav.reviews": "Reviews",
+        "nav.menuOpen": "Open navigation",
+        "nav.menuClose": "Close navigation",
         "nav.gallery": "Gallery",
-        "nav.artist": "Artist",
+        "nav.artist": "About",
+        "nav.projects": "Projects",
         "nav.contact": "Contact",
-        "hero.statement": "Visual explorations of consciousness, perception and organic complexity.",
-        "hero.copy": "Original works, fine-art prints, and commissioned visuals by Jannik Breder. Drawn by hand and developed for paper, spaces, events, and identities.",
-        "hero.shop": "Shop artworks",
-        "hero.commission": "Commission work",
-        "hero.originals": "Original artworks",
-        "hero.prints": "Art prints",
-        "hero.commissions": "Commission work",
-        "hero.inquiry": "Direct inquiry",
+        "hero.copy": "I draw organic worlds by hand and bring them into print, events and spaces.",
+        "hero.byline": "Jannik Breder · Visual Artist",
+        "hero.gallery": "View selected works",
+        "hero.commission": "Discuss a project",
         "shop.eyebrow": "Current Selection",
         "shop.title": "Collect a work or start a project",
         "shop.copy": "Explore originals, prints, and selected commission formats. Add available works to your inquiry or contact me directly for custom projects.",
@@ -91,13 +57,13 @@ const translations = {
         "reviews.message": "Your experience",
         "reviews.submit": "Prepare review email",
         "reviews.note": "Your text opens as an email draft, so nothing is published automatically.",
-        "gallery.eyebrow": "Gallery View",
         "gallery.title": "Selected works",
-        "gallery.copy": "Selected original works, print variants, tattoo drawings, objects, and spatial projects.",
+        "gallery.copy": "Drawings, paintings and sketchbook studies from Organic Dreamscapes.",
+        "gallery.more": "More works",
         "gallery.ornamentDrawing": "Ornament Drawing",
         "gallery.sketchbook": "Sketchbook",
         "gallery.sketch": "Sketch",
-        "gallery.organic": "Organic Passage - print available by request",
+        "gallery.organic": "Organic Passage · watercolor and ink",
         "gallery.abstract": "Abstract Faces - watercolor and ink on paper",
         "gallery.facesV3": "Faces V3 - modified print variant",
         "gallery.selfLoveTwo": "Self Love II - print detail",
@@ -124,9 +90,9 @@ const translations = {
         "services.tattoo": "A custom tattoo template developed together from your idea, body placement, and visual direction.",
         "services.logoTitle": "Logo Design Package",
         "services.logo": "A monogram, symbol, or wordmark with a clear visual direction for a project, label, collective, or small business.",
-        "practice.eyebrow": "Practice and experience",
-        "practice.title": "Built across paper, screens, and real spaces",
-        "practice.copy": "A hybrid practice combining analog drawing, digital production, and hands-on work for events and physical environments.",
+        "practice.eyebrow": "Project spotlight",
+        "practice.title": "From drawing to space",
+        "practice.copy": "I painted surfaces and lettering by hand for the Hilltop Bar at Waldfrieden.",
         "practice.projectLabel": "Selected project",
         "practice.projectDate": "Surface design and lettering, 2024",
         "practice.analogLabel": "Analog + digital",
@@ -139,7 +105,7 @@ const translations = {
         "practice.processTitle": "Briefing, concept, production",
         "practice.processCopy": "Scope, format, timing, revisions, and usage are agreed before work starts.",
         "contact.eyebrow": "Contact",
-        "contact.title": "Bring your idea into the next visual world",
+        "contact.title": "Let’s talk about your project",
         "contact.copy": "Tell me what you are planning, where the work will live, and when you need it. For available artworks, you can also send a prepared inquiry from the cart.",
         "contact.scope": "Originals, prints, and commissioned work",
         "contact.location": "Based in Bielefeld, available for remote and on-site projects",
@@ -196,23 +162,22 @@ const translations = {
         "footer.country": "Germany"
     },
     de: {
-        "meta.title": "Organic Dreamscapes | Mind Matter Art",
-        "meta.description": "Organic Dreamscapes von Jannik Breder: Originalkunst, hochwertige Kunstdrucke, individuelle Bildwelten, Tattoo-Motive und Raumgestaltung.",
-        "skip.shop": "Direkt zum Shop",
+        "meta.title": "Jannik Breder · Organic Dreamscapes | Mind Matter Art",
+        "meta.description": "Organic Dreamscapes ist das Portfolio von Jannik Breder: Handzeichnungen, Kunstdrucke, Schriftzüge und Raumgestaltung.",
+        "skip.content": "Direkt zum Inhalt",
         "nav.shop": "Shop",
         "nav.commissions": "Aufträge",
         "nav.reviews": "Rezensionen",
+        "nav.menuOpen": "Navigation öffnen",
+        "nav.menuClose": "Navigation schließen",
         "nav.gallery": "Galerie",
-        "nav.artist": "Künstler",
+        "nav.artist": "Über mich",
+        "nav.projects": "Projekte",
         "nav.contact": "Kontakt",
-        "hero.statement": "Visuelle Erkundungen von Bewusstsein, Wahrnehmung und organischer Komplexität.",
-        "hero.copy": "Originalarbeiten, Kunstdrucke und individuelle Bildwelten von Jannik Breder. Von Hand gezeichnet und für Papier, Räume, Events und Identitäten weiterentwickelt.",
-        "hero.shop": "Arbeiten ansehen",
-        "hero.commission": "Auftrag anfragen",
-        "hero.originals": "Originalarbeiten",
-        "hero.prints": "Kunstdrucke",
-        "hero.commissions": "Auftragsarbeiten",
-        "hero.inquiry": "Direkte Anfrage",
+        "hero.copy": "Ich zeichne organische Bildwelten von Hand und setze sie als Kunstdrucke, Eventgrafik und Raumgestaltung um.",
+        "hero.byline": "Jannik Breder · Bildender Künstler",
+        "hero.gallery": "Ausgewählte Arbeiten ansehen",
+        "hero.commission": "Projekt anfragen",
         "shop.eyebrow": "Aktuelle Auswahl",
         "shop.title": "Arbeit sammeln oder Projekt starten",
         "shop.copy": "Entdecke Originale, Kunstdrucke und ausgewählte Auftragsformate. Lege verfügbare Arbeiten in deine Anfrage oder kontaktiere mich direkt für individuelle Projekte.",
@@ -243,13 +208,13 @@ const translations = {
         "reviews.message": "Deine Erfahrung",
         "reviews.submit": "Rezension per E-Mail vorbereiten",
         "reviews.note": "Dein Text öffnet sich als E-Mail-Entwurf, es wird nichts automatisch veröffentlicht.",
-        "gallery.eyebrow": "Galerieansicht",
         "gallery.title": "Ausgewählte Arbeiten",
-        "gallery.copy": "Ausgewählte Originalarbeiten, Druckvarianten, Tattoo-Zeichnungen, Objekte und Raumprojekte.",
+        "gallery.copy": "Zeichnungen, Malerei und Skizzen aus Organic Dreamscapes.",
+        "gallery.more": "Weitere Arbeiten",
         "gallery.ornamentDrawing": "Ornamentzeichnung",
         "gallery.sketchbook": "Skizzenbuch",
         "gallery.sketch": "Skizze",
-        "gallery.organic": "Organic Passage - A4-Kunstdruck auf Anfrage",
+        "gallery.organic": "Organic Passage · Aquarell und Tusche",
         "gallery.abstract": "Abstract Faces - Aquarell und Tusche auf Papier",
         "gallery.facesV3": "Faces V3 - modifizierte Druckvariante",
         "gallery.selfLoveTwo": "Self Love II - Detail des Kunstdrucks",
@@ -276,9 +241,9 @@ const translations = {
         "services.tattoo": "Eine individuelle Tattoo-Vorlage, gemeinsam entwickelt aus Idee, Körperstelle und visueller Richtung.",
         "services.logoTitle": "Logo-Design-Paket",
         "services.logo": "Monogramm, Symbol oder Wortmarke mit klarer visueller Richtung für ein Projekt, Label, Kollektiv oder kleines Unternehmen.",
-        "practice.eyebrow": "Praxis und Erfahrung",
-        "practice.title": "Für Papier, Bildschirm und reale Räume",
-        "practice.copy": "Eine hybride Praxis aus analoger Zeichnung, digitaler Produktion und handwerklicher Arbeit für Events und physische Umgebungen.",
+        "practice.eyebrow": "Projekt im Fokus",
+        "practice.title": "Von der Zeichnung in den Raum",
+        "practice.copy": "Für die Hilltop Bar im Waldfrieden habe ich Flächen und Schriftzüge von Hand gestaltet.",
         "practice.projectLabel": "Ausgewähltes Projekt",
         "practice.projectDate": "Flächengestaltung und Schrift, 2024",
         "practice.analogLabel": "Analog + digital",
@@ -291,7 +256,7 @@ const translations = {
         "practice.processTitle": "Briefing, Konzept, Umsetzung",
         "practice.processCopy": "Umfang, Format, Timing, Korrekturen und Nutzung werden vor Arbeitsbeginn vereinbart.",
         "contact.eyebrow": "Kontakt",
-        "contact.title": "Bring deine Idee in die nächste Bildwelt",
+        "contact.title": "Lass uns über dein Projekt sprechen",
         "contact.copy": "Erzähl mir, was du planst, wo die Arbeit eingesetzt wird und wann du sie brauchst. Für verfügbare Kunst kannst du auch eine vorbereitete Anfrage aus dem Warenkorb senden.",
         "contact.scope": "Originale, Kunstdrucke und Auftragsarbeiten",
         "contact.location": "In Bielefeld, verfügbar für Remote- und Vor-Ort-Projekte",
@@ -757,7 +722,8 @@ const dialogContent = document.querySelector("#dialogContent");
 const contactForm = document.querySelector("#contactForm");
 const reviewForm = document.querySelector("#reviewForm");
 const languageButtons = document.querySelectorAll(".lang-btn");
-const heroImage = document.querySelector(".hero-art");
+const navigation = document.querySelector("#primaryNavigation");
+const menuToggle = document.querySelector(".menu-toggle");
 
 let activeFilter = "all";
 let currentLanguage = getInitialLanguage();
@@ -842,6 +808,13 @@ function setLanguage(language, persist = true) {
     if (productDialog.open && productDialog.dataset.productId) {
         renderProductDialog(productDialog.dataset.productId);
     }
+}
+
+function setNavigationOpen(isOpen) {
+    navigation.classList.toggle("is-open", isOpen);
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.dataset.i18nAria = isOpen ? "nav.menuClose" : "nav.menuOpen";
+    menuToggle.setAttribute("aria-label", t(menuToggle.dataset.i18nAria));
 }
 
 function formatPrice(value) {
@@ -1212,106 +1185,6 @@ function prefersReducedData() {
     return Boolean(connection?.saveData || slowConnection);
 }
 
-function initRandomHeroImage() {
-    if (!heroImage || !HERO_IMAGES.length) return;
-
-    let activeHeroIndex = HERO_IMAGES.findIndex(
-        (image) => image.src === heroImage.getAttribute("src")
-    );
-    let heroTimer = null;
-    let preparedHero = null;
-    let preloadPromise = null;
-
-    function getNextHeroIndex() {
-        if (HERO_IMAGES.length === 1) return 0;
-
-        let nextIndex = activeHeroIndex;
-        while (nextIndex === activeHeroIndex) {
-            nextIndex = Math.floor(Math.random() * HERO_IMAGES.length);
-        }
-        return nextIndex;
-    }
-
-    function scheduleIdle(callback) {
-        if ("requestIdleCallback" in window) {
-            window.requestIdleCallback(callback, { timeout: 2400 });
-        } else {
-            window.setTimeout(callback, 800);
-        }
-    }
-
-    async function prepareNextHeroImage() {
-        if (preloadPromise || preparedHero) return;
-
-        const nextIndex = getNextHeroIndex();
-        const nextImage = HERO_IMAGES[nextIndex];
-        const preloader = new Image();
-        preloader.decoding = "async";
-        preloader.src = nextImage.src;
-
-        preloadPromise = typeof preloader.decode === "function"
-            ? preloader.decode()
-            : new Promise((resolve, reject) => {
-                preloader.addEventListener("load", resolve, { once: true });
-                preloader.addEventListener("error", reject, { once: true });
-            });
-
-        try {
-            await preloadPromise;
-            preparedHero = { ...nextImage, index: nextIndex };
-        } catch {
-            preparedHero = null;
-        } finally {
-            preloadPromise = null;
-        }
-    }
-
-    function setRandomHeroImage() {
-        if (!preparedHero) {
-            scheduleIdle(prepareNextHeroImage);
-            return;
-        }
-
-        const nextImage = preparedHero;
-        preparedHero = null;
-        activeHeroIndex = nextImage.index;
-
-        heroImage.classList.add("is-fading");
-        window.setTimeout(() => {
-            heroImage.src = nextImage.src;
-            heroImage.alt = nextImage.alt;
-            heroImage.classList.remove("is-fading");
-            scheduleIdle(prepareNextHeroImage);
-        }, 180);
-    }
-
-    if (prefersReducedData() || window.matchMedia("(max-width: 760px)").matches) {
-        return;
-    }
-
-    function startHeroRotation() {
-        if (heroTimer || document.hidden) return;
-        heroTimer = window.setInterval(setRandomHeroImage, HERO_IMAGE_INTERVAL);
-    }
-
-    function stopHeroRotation() {
-        if (!heroTimer) return;
-        window.clearInterval(heroTimer);
-        heroTimer = null;
-    }
-
-    document.addEventListener("visibilitychange", () => {
-        if (document.hidden) {
-            stopHeroRotation();
-        } else {
-            startHeroRotation();
-        }
-    });
-
-    scheduleIdle(prepareNextHeroImage);
-    startHeroRotation();
-}
-
 function initAmbientField() {
     const canvas = document.querySelector("#ambientField");
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1460,6 +1333,27 @@ languageButtons.forEach((button) => {
     });
 });
 
+menuToggle.addEventListener("click", () => {
+    setNavigationOpen(!navigation.classList.contains("is-open"));
+});
+
+navigation.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setNavigationOpen(false));
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && navigation.classList.contains("is-open")) {
+        setNavigationOpen(false);
+        menuToggle.focus();
+    }
+});
+
+document.addEventListener("click", (event) => {
+    if (navigation.classList.contains("is-open") && !navigation.contains(event.target) && !menuToggle.contains(event.target)) {
+        setNavigationOpen(false);
+    }
+});
+
 sortSelect.addEventListener("change", renderProducts);
 
 document.addEventListener("click", (event) => {
@@ -1518,5 +1412,4 @@ reviewForm.addEventListener("submit", submitReviewForm);
 
 setLanguage(currentLanguage, false);
 initReveal();
-initRandomHeroImage();
 initAmbientField();
