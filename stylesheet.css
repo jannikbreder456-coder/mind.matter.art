@@ -284,7 +284,9 @@ main {
 
 .hero-art {
     display: block;
-    width: 100%;
+    justify-self: center;
+    width: auto;
+    max-width: 100%;
     height: clamp(280px, 49svh, 450px);
     object-fit: contain;
     background: rgba(7, 7, 10, 0.6);
@@ -604,8 +606,16 @@ h3 {
 }
 
 .lookbook-section {
-    padding-block: clamp(40px, 5.5vw, 76px);
+    padding-block: clamp(36px, 4vw, 64px);
     content-visibility: visible;
+}
+
+.lookbook-section .section-heading {
+    margin-bottom: 24px;
+}
+
+.lookbook-section .section-heading p {
+    margin-bottom: 0;
 }
 
 .lookbook-grid {
@@ -1402,6 +1412,7 @@ body.cart-open .drawer-scrim {
     }
 
     .hero-art {
+        width: 100%;
         height: clamp(136px, 28vw, 200px);
         object-fit: cover;
         object-position: center 52%;
